@@ -31,11 +31,7 @@ public class Teacher {
         }else{
             return "My name is "+ this.getName() +". I am " + this.getAge() + " years old. I am a Teacher. I teach No Class.";
         }
-//        if(this.klass != 1){
-//            return "My name is "+ this.getName() +". I am " + this.getAge() + " years old. I am a Teacher. I teach " + this.getKlass()+" Class.";
-//        }else{
-//            return "My name is "+ this.getName() +". I am " + this.getAge() + " years old. I am a Teacher. I teach No Class.";
-//        }
+
 
     }
 
