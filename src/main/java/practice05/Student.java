@@ -1,21 +1,11 @@
 package practice05;
 
-public class Student {
-    private String name;
+public class Student extends Person {
 
-    private int age;
     private int klass;
     public Student(String name, int age, int klass) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.klass = klass;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-    public int getAge() {
-        return this.age;
     }
 
     public int getKlass() {

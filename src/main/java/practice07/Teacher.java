@@ -1,25 +1,15 @@
 package practice07;
 
-public class Teacher {
-    private String name;
-    private int age;
+public class Teacher extends Person {
     private Klass klass;
 
-    public Teacher(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-    public Teacher(String name, int age,Klass klass) {
-        this.name = name;
-        this.age = age;
+    public Teacher(String name, int age, Klass klass) {
+        super(name, age);
         this.klass = klass;
     }
-    public String getName() {
-        return this.name;
-    }
 
-    public int getAge() {
-        return this.age;
+    public Teacher(String name, int age) {
+        super(name, age);
     }
 
     public Klass getKlass() {
@@ -36,9 +26,9 @@ public class Teacher {
 
     public String introduceWith(Student jerry) {
         if(this.klass.getNumber() == jerry.getKlass().getNumber()){
-            return "My name is " + this.name + ". I am 21 years old. I am a Teacher. I teach "+jerry.getName()+".";
+            return "My name is " + super.getName() + ". I am 21 years old. I am a Teacher. I teach "+jerry.getName()+".";
         }else{
-            return "My name is " + this.name + ". I am 21 years old. I am a Teacher. I don't teach "+jerry.getName()+".";
+            return "My name is " + super.getName() + ". I am 21 years old. I am a Teacher. I don't teach "+jerry.getName()+".";
         }
 
     }

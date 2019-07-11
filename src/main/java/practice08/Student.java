@@ -1,25 +1,21 @@
 package practice08;
 
-public class Student {
-    private String name;
-    private int age;
+public class Student extends Person {
+
     private Klass klass;
-    private int id;
+
     public Student(int id, String name, int age, Klass klass) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
+        super(id, name, age);
         this.klass = klass;
     }
-    public String getName() {
-        return name;
-    }
 
-    public int getAge() {
-        return age;
-    }
     public String introduce() {
-        return "My name is "+this.getName() + ". I am "+ this.getAge() + " years old. I am a Student. I am Leader of Class " + klass.getNumber() +".";
+        if (!this.equals(klass.getLeader())) {
+            return "My name is "+this.getName() + ". I am "+ this.getAge() + " years old. I am a Student. I am at Class " + klass.getNumber() +".";
+        } else {
+            return "My name is "+this.getName() + ". I am "+ this.getAge() + " years old. I am a Student. I am Leader of Class " + klass.getNumber() +".";
+        }
+
     }
 
     public Klass getKlass() {
