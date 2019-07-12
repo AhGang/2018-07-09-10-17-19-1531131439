@@ -1,24 +1,11 @@
 package practice11;
 
-public class Student {
-    private String name;
-    private int age;
-
-
+public class Student extends Person {
     private Klass klass;
-    private int id;
-    public Student(int id, String name, int age, Klass klass) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.klass = klass;
-    }
-    public String getName() {
-        return name;
-    }
 
-    public int getAge() {
-        return age;
+    public Student(int id, String name, int age, Klass klass) {
+        super(id, name, age);
+        this.klass = klass;
     }
     public String introduce() {
         if(klass.isInClass()){
@@ -28,10 +15,8 @@ public class Student {
         }
 
     }
+
     public Klass getKlass() {
         return klass;
-    }
-    public void setKlass(Klass klass) {
-        this.klass = klass;
     }
 }

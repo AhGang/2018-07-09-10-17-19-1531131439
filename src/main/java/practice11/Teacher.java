@@ -3,39 +3,18 @@ package practice11;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Teacher {
-    private String name;
-    private int age;
-    private Klass klass;
-    private int id;
+public class Teacher extends Person{
     private List<Klass> classes;
 
+    public Teacher(int id, String name, int age, List<Klass> classes) {
+        super(id, name, age);
+        this.classes = classes;
+    }
+
     public Teacher(int id, String name, int age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.klass = klass;
-    }
-    public Teacher(int id, String name, int age, List<Klass> linkedList) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
-        this.classes = linkedList;
-
-        classes.forEach(klass -> klass.appendTeacher(this));
-
-    }
-    public String getName() {
-        return this.name;
+        super(id, name, age);
     }
 
-    public int getAge() {
-        return this.age;
-    }
-
-    public Klass getKlass() {
-        return this.klass;
-    }
     public String introduce() {
         if(classes==null){
             return "My name is "+ this.getName() +". I am " + this.getAge() + " years old. I am a Teacher. I teach No Class.";
@@ -47,9 +26,9 @@ public class Teacher {
 
     public String introduceWith(Student student) {
         if(isTeaching(student)){
-            return "My name is " + this.name + ". I am 21 years old. I am a Teacher. I teach "+student.getName()+".";
+            return "My name is " + super.getName() + ". I am 21 years old. I am a Teacher. I teach "+student.getName()+".";
         }else{
-            return "My name is " + this.name + ". I am 21 years old. I am a Teacher. I don't teach "+student.getName()+".";
+            return "My name is " + super.getName() + ". I am 21 years old. I am a Teacher. I don't teach "+student.getName()+".";
         }
 
 
